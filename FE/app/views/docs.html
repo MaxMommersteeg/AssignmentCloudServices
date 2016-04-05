@@ -1,0 +1,160 @@
+<div class="row">
+<div class="container">
+  <div class="jumbotron">
+    <h1>Documentation</h1>
+    <p>Finally; all the Popcorn time data you'll ever need, in once place, and easily accessible through a modern RESTful API.</p>
+  </div>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Shows</h2>
+        <table class="table table-hover">
+            <thead>
+                <tr><td><b>URL</b></td><td><b>Description</b></td></tr>
+            </thead>
+            <tbody>
+                <tr class="info"><td>http://cloud-services-assignment.herokuapp.com/shows</td><td>Get all shows</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Show</h2>
+        <table class="table table-hover">
+            <thead>
+                <tr><td><b>URL</b></td><td><b>Description</b></td></tr>
+            </thead>
+            <tbody>
+                <tr class="info"><td>http://cloud-services-assignment.herokuapp.com/shows/{imdb_id}</td><td>Get specific show by IMDB ID</td></tr>
+            </tbody>
+        </table>
+        <hr>
+        <h4>Properties</h4>
+        <table class="table table-hover">
+            <thead>
+                <tr><td><b>Property</b></td><td><b>DataType</b></td><td><b>Description</b></td></tr>
+            </thead>
+            <tbody>
+                <tr><td>_id</td><td>String</td><td>Unique Identifier for the show</td></tr>
+                <tr><td>imdb_id</td><td>String</td><td>IMDB ID, same ID as used on the IMDB <a href="http://www.imdb.com/">website</a></td></tr>
+                <tr><td>tvdb_id</td><td>String</td><td>TVDB ID, same ID as used on the TVDB <a href="http://thetvdb.com/">website</a></td></tr>
+                <tr><td>title</td><td>String</td><td>The show's title</td></tr>
+                <tr><td>year</td><td>String</td><td>The release year</td></tr>
+                <tr><td>slug</td><td>String</td><td>The show's slug</td></tr>
+                <tr><td>synopsis</td><td>String</td><td>A short description of the most important information</td></tr>
+                <tr><td>runtime</td><td>String</td><td>The show's runtime</td></tr>
+                <tr><td>rating*</td><td>Object</td><td>Contains properties showing the show's rating</td></tr>
+                <tr><td>country</td><td>String</td><td>The show's origin country</td></tr>
+                <tr><td>network</td><td>String</td><td>Where the show can be watched</td></tr>
+                <tr><td>air_day</td><td>String</td><td>Which day the show airs</td></tr>
+                <tr><td>air_time</td><td>String</td><td>Which time the show airs</td></tr>
+                <tr><td>status</td><td>String</td><td>The show's status, E.G.: ended or returning series</td></tr>
+                <tr><td>num_seasons</td><td>Integer</td><td>The number of seasons released</td></tr>
+                <tr><td>last_updated</td><td>Number</td><td>Last updated timestamp</td></tr>
+                <tr><td>images*</td><td>Object</td><td>Contains properties with URL's showing images related to the show</td></tr>
+            </tbody>
+        </table>
+        <hr>
+        <h4>Rating</h4>
+        <table class="table table-hover">
+            <thead>
+                <tr><td><b>Property</b></td><td><b>DataType</b></td><td><b>Description</b></td></tr>
+            </thead>
+            <tbody>
+                <tr><td>hated</td><td>Integer</td><td>Number of times the show was marked 'hated'</td></tr>
+                <tr><td>loved</td><td>Integer</td><td>Number of times the show was marked 'loved'</td></tr>
+                <tr><td>votes</td><td>Integer</td><td>The total amount of votes for this show</td></tr>
+                <tr><td>watching</td><td>Integer</td><td>The amount of people currently watching (amount of peers)</td></tr>
+                <tr><td>percentage</td><td>Integer</td><td>Current score E.G.: 84% = 8.4</td></tr>
+                <tr><td>banner</td><td>String</td><td>Url with a banner</td></tr>
+            </tbody>
+        </table>
+        <hr>
+        <h4>Images</h4>
+        <table class="table table-hover">
+            <thead>
+                <tr><td><b>Property</b></td><td><b>DataType</b></td><td><b>Description</b></td></tr>
+            </thead>
+            <tbody>
+                <tr><td>fanart</td><td>String</td><td>Url with fan art</td></tr>
+                <tr><td>poster</td><td>String</td><td>Url with a poster</td></tr>
+                <tr><td>banner</td><td>String</td><td>Url with a banner</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Episodes</h2>
+        <table class="table table-hover">
+            <thead>
+                <tr><td><b>URL</b></td><td><b>Description</b></td></tr>
+            </thead>
+            <tbody>
+                <tr class="info"><td>http://cloud-services-assignment.herokuapp.com/shows/{imdb_id}/episodes</td><td>Get all episodes belonging to a show</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Episode</h2>
+        <table class="table table-hover">
+            <thead>
+                <tr><td><b>URL</b></td><td><b>Description</b></td></tr>
+            </thead>
+            <tbody>
+                <tr class="info"><td>http://cloud-services-assignment.herokuapp.com/shows/{imdb_id}/episode?season={season}&episode={episode}</td><td>Get episodes belonging to show</td></tr>
+            </tbody>
+        </table>
+        <hr>
+        <h4>Query parameters</h4>
+        <table class="table table-hover">
+            <thead>
+                <tr><td><b>Property</b></td><td><b>DataType</b></td><td><b>Description</b></td></tr>
+            </thead>
+            <tbody>
+                <tr><td>season</td><td>Integer</td><td>To what season this episode belongs</td></tr>
+                <tr><td>episode</td><td>Integer</td><td>The episode number</td></tr>
+            </tbody>
+        </table>
+         <p class="help-block">Will return a single episode when both season & episode quary parameters are set.</p>
+         <hr>
+        <h4>Properties</h4>
+        <table class="table table-hover">
+            <thead>
+                <tr><td><b>Property</b></td><td><b>DataType</b></td><td><b>Description</b></td></tr>
+            </thead>
+            <tbody>
+                <tr><td>tvdb_id</td><td>String</td><td>TVDB ID, same ID as used on the TVDB <a href="http://thetvdb.com/">website</a></td></tr>
+                <tr><td>season</td><td>Integer</td><td>To what season this episode belongs</td></tr>
+                <tr><td>episode</td><td>Integer</td><td>The episode number</td></tr>
+                <tr><td>title</td><td>String</td><td>The episode title</td></tr>
+                <tr><td>overview</td><td>String</td><td>Short summary about the episode</td></tr>
+                <tr><td>date_based</td><td>Boolean</td><td>Episodes for this season are released all at once or with a given period in between</td></tr>
+                <tr><td>first_aired</td><td>Integer</td><td>Timestamp of when the episode first aired</td></tr>
+                <tr><td>watched</td><td>Object</td><td>Containing a single boolean named "watched" with wether the user has watched the episode</td></tr>
+                <tr><td>torrents*</td><td>Object array</td><td>Containing a list of torrents and urls to them</td></tr>
+            </tbody>
+        </table>
+         <hr>
+        <h4>Torrents</h4>
+        <table class="table table-hover">
+            <thead>
+                <tr><td><b>Property</b></td><td><b>DataType</b></td><td><b>Description</b></td></tr>
+            </thead>
+            <tbody>
+                <tr><td>url</td><td>String</td><td>url to torrent file / magnet link</td></tr>
+                <tr><td>seeds</td><td>Integer</td><td>Number of current seeders</td></tr>
+                <tr><td>peers</td><td>Integer</td><td>Number of current peers</td></tr>
+                <tr><td>provider</td><td>String</td><td>Uploader name</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
